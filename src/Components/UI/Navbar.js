@@ -1,11 +1,11 @@
 import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
   const { data: session } = useSession();
-  console.log(session);
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-gray-200">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -47,22 +47,44 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <div className="hidden md:block">
+          <Link href="/" className="flex items-center ">
+            <Image src="/logo.avif" width={60} height={60} alt="Logo" />
+            <p className="ml-2">SmartTech</p>
+          </Link>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 flex space-x-4">
           <li>
-            <a>Item 1</a>
+            <Link href="/products">Get All Products</Link>
           </li>
-          <li tabIndex={0}>
+          <li className="relative group">
             <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
+              <summary className="cursor-pointer">Categories</summary>
+              <ul className="absolute left-0 hidden mt-2 space-y-2 bg-white rounded-lg border border-gray-200 group-hover:block">
                 <li>
-                  <a>Submenu 1</a>
+                  <Link href="/categories/processor">Processor</Link>
                 </li>
                 <li>
-                  <a>Submenu 2</a>
+                  <Link href="/categories/motherboard">Motherboard</Link>
+                </li>
+                <li>
+                  <Link href="/categories/ram">RAM</Link>
+                </li>
+                <li>
+                  <Link href="/categories/powersupplyunit">
+                    Power Supply Unit
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/categories/storagedevice">Storage Device</Link>
+                </li>
+                <li>
+                  <Link href="/categories/monitor">Monitor</Link>
+                </li>
+                <li>
+                  <Link href="/categories/others">Others</Link>
                 </li>
               </ul>
             </details>
@@ -72,22 +94,65 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
-        {session?.user?.email ? (
-          <button
-            onClick={() => signOut()}
-            className="btn btn-sm mx-5 text-indigo-800"
-          >
-            Sign out
-          </button>
-        ) : (
-          <Link href="/login" className="btn-sm btn mx-5 text-indigo-800">
-            Login
+
+      <div className="navbar-end flex items-center space-x-4">
+        <div className="hidden lg:flex space-x-4">
+          {session?.user?.email ? (
+            <div>
+              <Link
+                href="/create-product"
+                className="btn-sm btn text-indigo-800 mr-4"
+              >
+                Create New Product
+              </Link>
+              <button
+                onClick={() => signOut()}
+                className="btn btn-sm text-indigo-800"
+              >
+                Sign out
+              </button>
+            </div>
+          ) : (
+            <Link href="/login" className="btn-sm btn text-indigo-800">
+              Login
+            </Link>
+          )}
+          <Link href="/pc-builder" className="btn btn-sm text-indigo-800">
+            PC BUILDER
           </Link>
-        )}
-        <Link href="/pc-builder" className="btn btn-sm text-indigo-800">
-          PC BUILDER
-        </Link>
+        </div>
+
+        {/* Menu Button for Small Screens */}
+        <div className="lg:hidden relative group">
+          <button className="btn btn-sm text-indigo-800 px-3 py-2">Menu</button>
+          <ul className="absolute right-0 hidden mt-3 space-y-2 bg-white rounded-lg border border-gray-200 w-60 p-3 group-hover:block">
+            {session?.user?.email ? (
+              <>
+                <li>
+                  <Link href="/create-product" className="block">
+                    Create New Product
+                  </Link>
+                </li>
+                <li>
+                  <button onClick={() => signOut()} className="block">
+                    Sign out
+                  </button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <Link href="/login" className="block">
+                  Login
+                </Link>
+              </li>
+            )}
+            <li>
+              <Link href="/pc-builder" className="block">
+                PC BUILDER
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

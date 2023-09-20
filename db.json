@@ -1,0 +1,374 @@
+[
+    {
+        "image": "https://i.ibb.co/R60MThT/processor-1.png",
+        "product_name": "Processor XYZ",
+        "category": "processor",
+        "status": "In Stock",
+        "price": 299.99,
+        "description": "Powerful processor for high-performance computing. Features 8 cores, 3.5 GHz clock speed, LGA1200 socket, and 16 MB cache. Suitable for heavy workloads and gaming.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "XYZ123",
+            "core_count": 8,
+            "clock_speed": "3.5 GHz",
+            "socket_type": "LGA1200",
+            "cache": "16 MB",
+            "power_consumption": "95W"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/sWYhtV1/processor-3.png",
+        "product_name": "Processor ABC",
+        "category": "processor",
+        "status": "Out of stock",
+        "price": 249.99,
+        "description": "Efficient processor for everyday computing. Features 6 cores, 3.2 GHz clock speed, AM4 socket, and 12 MB cache. Suitable for home and office use.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "ABC789",
+            "core_count": 6,
+            "clock_speed": "3.2 GHz",
+            "socket_type": "AM4",
+            "cache": "12 MB",
+            "power_consumption": "65W"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/sWYhtV1/processor-3.png",
+        "product_name": "Processor ZEN",
+        "category": "processor",
+        "status": "In Stock",
+        "price": 379.99,
+        "description": "High-end processor for professional workstations. Features 12 cores, 4.0 GHz clock speed, TR4 socket, and 24 MB cache. Ideal for content creation and 3D rendering.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "ZEN2023",
+            "core_count": 12,
+            "clock_speed": "4.0 GHz",
+            "socket_type": "TR4",
+            "cache": "24 MB",
+            "power_consumption": "150W"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/s5Nx9HV/motherboard-3.png",
+        "product_name": "Motherboard ABC",
+        "category": "motherboard",
+        "status": "In Stock",
+        "price": 159.99,
+        "description": "High-quality motherboard for gaming PCs. Features AM4 socket, ATX form factor, 4 memory slots, and supports up to 64GB RAM. Equipped with USB 3.2, HDMI, DisplayPort, Ethernet, Wi-Fi 6, and Bluetooth 5.0.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "ABC456",
+            "socket_type": "AM4",
+            "form_factor": "ATX",
+            "memory_slots": 4,
+            "max_memory": "64GB",
+            "ports": "USB 3.2, HDMI, DisplayPort",
+            "connectivity": "Ethernet, Wi-Fi 6, Bluetooth 5.0"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/2vnMnzV/motherboard-2.png",
+        "product_name": "Motherboard XYZ",
+        "category": "motherboard",
+        "status": "In Stock",
+        "price": 199.99,
+        "description": "High-performance motherboard for gaming enthusiasts. Features LGA1200 socket, micro-ATX form factor, 2 memory slots, and supports up to 32GB RAM. Equipped with USB 3.2, HDMI, and Gigabit Ethernet.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "XYZ789",
+            "socket_type": "LGA1200",
+            "form_factor": "micro-ATX",
+            "memory_slots": 2,
+            "max_memory": "32GB",
+            "ports": "USB 3.2, HDMI",
+            "connectivity": "Gigabit Ethernet"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/s5Nx9HV/motherboard-3.png",
+        "product_name": "Motherboard ZEN",
+        "category": "motherboard",
+        "status": "Out of stock",
+        "price": 219.99,
+        "description": "Premium motherboard for high-end PCs. Features TR4 socket, ATX form factor, 8 memory slots, and supports up to 128GB RAM. Equipped with USB 3.2, HDMI, DisplayPort, and Intel Wi-Fi 6.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "ZEN2023",
+            "socket_type": "TR4",
+            "form_factor": "ATX",
+            "memory_slots": 8,
+            "max_memory": "128GB",
+            "ports": "USB 3.2, HDMI, DisplayPort",
+            "connectivity": "Intel Wi-Fi 6"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/cNCrmq0/ram-1.jpg",
+        "product_name": "RAM 16GB DDR4",
+        "category": "ram",
+        "status": "In Stock",
+        "price": 79.99,
+        "description": "High-speed DDR4 RAM for seamless multitasking. Capacity: 16GB, Speed: 3200MHz, Type: DDR4, CAS Latency: CL16, Voltage: 1.35V.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "DDR4-16GB",
+            "capacity": "16GB",
+            "speed": "3200MHz",
+            "type": "DDR4",
+            "cas_latency": "CL16",
+            "voltage": "1.35V"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/2cWRtvm/ram-2.jpg",
+        "product_name": "RAM 8GB DDR4",
+        "category": "ram",
+        "status": "In Stock",
+        "price": 49.99,
+        "description": "Budget-friendly DDR4 RAM for everyday computing. Capacity: 8GB, Speed: 2666MHz, Type: DDR4, CAS Latency: CL18, Voltage: 1.2V.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "DDR4-8GB",
+            "capacity": "8GB",
+            "speed": "2666MHz",
+            "type": "DDR4",
+            "cas_latency": "CL18",
+            "voltage": "1.2V"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/RgMfG6t/ram-3.jpg",
+        "product_name": "RAM 32GB DDR4",
+        "category": "ram",
+        "status": "In Stock",
+        "price": 129.99,
+        "description": "High-capacity DDR4 RAM for content creators and professionals. Capacity: 32GB, Speed: 3600MHz, Type: DDR4, CAS Latency: CL16, Voltage: 1.35V.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "DDR4-32GB",
+            "capacity": "32GB",
+            "speed": "3600MHz",
+            "type": "DDR4",
+            "cas_latency": "CL16",
+            "voltage": "1.35V"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/7W0RqbS/power-1.jpg",
+        "product_name": "PSU 650W",
+        "category": "powersupplyunit",
+        "status": "In Stock",
+        "price": 79.99,
+        "description": "Reliable 650W power supply for mid-range gaming PCs. 80 Plus Bronze certified for energy efficiency and stable performance.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "PSU650",
+            "wattage": "650W",
+            "certification": "80 Plus Bronze"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/C7NyWRk/power-2.jpg",
+        "product_name": "PSU 750W",
+        "category": "powersupplyunit",
+        "status": "In Stock",
+        "price": 99.99,
+        "description": "High-performance 750W power supply for gaming and overclocking. 80 Plus Gold certified for energy efficiency and stable power delivery.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "PSU750",
+            "wattage": "750W",
+            "certification": "80 Plus Gold"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/V3KTNRL/power-3.jpg",
+        "product_name": "PSU 850W",
+        "category": "powersupplyunit",
+        "status": "Out of stock",
+        "price": 129.99,
+        "description": "High-wattage 850W power supply for enthusiast-level gaming and multi-GPU setups. Fully modular design for easy cable management.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "PSU850",
+            "wattage": "850W",
+            "modularity": "Fully Modular"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/GPqPvDg/storage-1.jpg",
+        "product_name": "SSD 500GB",
+        "category": "storagedevice",
+        "status": "In Stock",
+        "price": 79.99,
+        "description": "Fast and reliable 500GB SSD for quick system boot times and data access. Suitable for gaming and multimedia tasks.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "SSD500",
+            "capacity": "500GB",
+            "type": "SSD"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/tCVvbWQ/storage-2.jpg",
+        "product_name": "HDD 2TB",
+        "category": "storagedevice",
+        "status": "In Stock",
+        "price": 59.99,
+        "description": "Large-capacity 2TB HDD for storing extensive media files and backups. Suitable for budget-conscious users.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "HDD2TB",
+            "capacity": "2TB",
+            "type": "HDD"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/g9ZRRZT/storage-3.jpg",
+        "product_name": "SSD 1TB",
+        "category": "storagedevice",
+        "status": "In Stock",
+        "price": 129.99,
+        "description": "High-speed 1TB SSD for gaming, content creation, and intensive applications. Enjoy faster load times and data transfer.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "SSD1TB",
+            "capacity": "1TB",
+            "type": "SSD"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/B3wJm5C/monitor-1.jpg",
+        "product_name": "Gaming Monitor 27\"",
+        "category": "monitor",
+        "status": "In Stock",
+        "price": 299.99,
+        "description": "27-inch gaming monitor with a high refresh rate and low response time. Enjoy smooth visuals and immersive gaming.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "GM27",
+            "size": "27\"",
+            "refresh_rate": "144Hz",
+            "response_time": "1ms"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/ZfNBNc8/monitor-2.jpg",
+        "product_name": "Ultrawide Monitor 34\"",
+        "category": "monitor",
+        "status": "In Stock",
+        "price": 499.99,
+        "description": "34-inch ultrawide monitor with an immersive curved display. Ideal for multitasking and productivity.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "UM34",
+            "size": "34\"",
+            "aspect_ratio": "21:9",
+            "curvature": "1500R"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/WpzYQGY/monitor-3.jpg",
+        "product_name": "4K Monitor 32\"",
+        "category": "monitor",
+        "status": "Out of stock",
+        "price": 699.99,
+        "description": "32-inch 4K monitor for stunning visuals and precise color reproduction. Ideal for photo editing and creative work.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "4K32",
+            "size": "32\"",
+            "resolution": "3840x2160",
+            "color_accuracy": "99% sRGB"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/HTR74TF/keyboard-1.jpg",
+        "product_name": "Gaming Keyboard",
+        "category": "others",
+        "status": "In Stock",
+        "price": 99.99,
+        "description": "Mechanical gaming keyboard with customizable RGB lighting. Enjoy responsive and tactile keystrokes.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "GKB",
+            "keyboard_type": "Mechanical",
+            "backlighting": "RGB",
+            "key_switches": "Cherry MX Red"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/n7wLNwf/mouse.webp",
+        "product_name": "Wireless Mouse",
+        "category": "others",
+        "status": "In Stock",
+        "price": 49.99,
+        "description": "Wireless mouse with precise tracking and ergonomic design. Ideal for productivity and casual gaming.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "WMouse",
+            "mouse_type": "Wireless",
+            "dpi": "1600",
+            "connectivity": "2.4GHz USB dongle"
+        },
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "image": "https://i.ibb.co/4K1dd1J/hanset.jpg",
+        "product_name": "Gaming Headset",
+        "category": "others",
+        "status": "In Stock",
+        "price": 89.99,
+        "description": "Immersive gaming headset with surround sound and noise-cancelling microphone. Enjoy clear communication and audio.",
+        "key_features": {
+            "brand": "Example Brand",
+            "model": "GHeadset",
+            "headset_type": "Over-ear",
+            "sound": "7.1 Surround",
+            "microphone": "Noise-cancelling"
+        },
+        "rating": 0,
+        "reviews": []
+    }
+]

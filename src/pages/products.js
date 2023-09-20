@@ -8,7 +8,7 @@ import RootLayout from "@/Components/layouts/RootLayout";
 import dynamic from "next/dynamic";
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ products }) {
+export default function Products({ products }) {
   const DynamicProduct = dynamic(
     () => import("../Components/UI/FeaturedProduct"),
     {
@@ -21,14 +21,12 @@ export default function Home({ products }) {
         <title>SmartTech-Home</title>
         <meta name="PC BUILDER" description="this is pc builder home page" />
       </Head>
-
-      <Banner />
       <DynamicProduct products={products}></DynamicProduct>
     </div>
   );
 }
 
-Home.getLayout = function getLayout(page) {
+Products.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
@@ -37,11 +35,11 @@ export const getStaticProps = async () => {
   const data = await res.json();
 
   const shuffledProducts = data?.data.sort(() => Math.random() - 0.5);
-  const randomProducts = shuffledProducts.slice(0, 6);
+  //const randomProducts = shuffledProducts.slice(0, 6);
 
   return {
     props: {
-      products: randomProducts,
+      products: shuffledProducts,
     },
   };
 };
