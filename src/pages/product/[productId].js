@@ -1,8 +1,10 @@
+import ProductReview from "@/Components/UI/ProductReview";
 import RootLayout from "@/Components/layouts/RootLayout";
 import Image from "next/image";
 
 const ProductDetailsPage = ({ product }) => {
   const { data } = product;
+
   const renderKeyFeatures = () => {
     const { key_features } = data;
 
@@ -56,7 +58,7 @@ const ProductDetailsPage = ({ product }) => {
             <div className="text-xl">
               <p className="text-xl my-3">
                 <span className="font-bold">Rating: </span>
-                {data?.rating}
+                {data?.rating.toFixed(2)}
               </p>
               <p className="text-xl">
                 <span className="font-bold">Description: </span>
@@ -70,7 +72,8 @@ const ProductDetailsPage = ({ product }) => {
           </div>
         </div>
       </div>
-      <div className="">
+      {<ProductReview id={data._id}></ProductReview>}
+      {/* <div className="">
         <h3 className="text-primary font-bold text-2xl mt-4">Reviews:</h3>
         <div className="">
           {product?.reviews?.map((review, index) => (
@@ -82,7 +85,7 @@ const ProductDetailsPage = ({ product }) => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
