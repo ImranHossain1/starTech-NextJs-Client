@@ -2,8 +2,6 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 
 const LoginPage = () => {
-  const router = useRouter();
-
   const getReferringUrl = () => {
     const referringUrl = document.referrer;
     return referringUrl || "/";

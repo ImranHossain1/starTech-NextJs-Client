@@ -6,9 +6,21 @@ import Head from "next/head";
 import Banner from "@/Components/UI/Banner";
 import RootLayout from "@/Components/layouts/RootLayout";
 import dynamic from "next/dynamic";
+import { useSession } from "next-auth/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ products }) {
+  const { data: session } = useSession(); // Get the user session
+
+  // Function to log user details
+  const logUserDetails = () => {
+    if (session) {
+      console.log(session.user);
+
+      // Add more user details as needed
+    }
+  };
+  logUserDetails();
   const DynamicProduct = dynamic(
     () => import("../Components/UI/FeaturedProduct"),
     {
