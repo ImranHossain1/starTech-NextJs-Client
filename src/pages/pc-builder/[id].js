@@ -1,10 +1,10 @@
+import RootLayout from "@/Components/layouts/RootLayout";
 import { addItem } from "@/redux/features/cart/cartSlice";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 
-const FeaturedProduct = ({ products }) => {
+const PcBuilderDetailsPage = ({ data }) => {
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -12,17 +12,12 @@ const FeaturedProduct = ({ products }) => {
     dispatch(addItem(product));
     router.push("/pc-builder");
   };
+
   return (
     <div className="md:px-16 px-4 my-8">
-      <div className="">
-        <h1 className="text-center font-bold text-3xl">Featured Products</h1>
-        <p className="text-center md:mt-3 md:mb-8 mb-3">
-          Check & Get Your Desired Product!
-        </p>
-      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {products?.map((product, idx) => (
-          <div key={idx} className="card bg-white shadow-xl">
+        {data?.map((product, idx) => (
+          <div key={idx} className="card  shadow-xl">
             <figure>
               <Image
                 src={product?.image}
@@ -51,18 +46,12 @@ const FeaturedProduct = ({ products }) => {
               </p>
               <p>
                 <span className="font-bold">Rating : </span>
-                {product?.average_rating}
+                {product?.rating}
               </p>
-              <div className="card-actions justify-between flex mt-4">
-                <Link href={`/product/${product?._id}`}>
-                  <button className="btn btn-sm bg-green-600 hover:bg-green-700 text-white">
-                    More Details
-                  </button>
-                </Link>
-
+              <div className="card-actions justify-end">
                 <button
                   onClick={() => handleAddToBuilder(product)}
-                  className="btn btn-sm bg-blue-600 hover:bg-blue-700 text-white"
+                  className="btn btn-primary uppercase"
                 >
                   Add to Builder
                 </button>
@@ -75,4 +64,21 @@ const FeaturedProduct = ({ products }) => {
   );
 };
 
-export default FeaturedProduct;
+export default PcBuilderDetailsPage;
+
+PcBuilderDetailsPage.getLayout = function getLayout(page) {
+  return <RootLayout>{page}</RootLayout>;
+};
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await fetch(
+    `http://localhost:5000/api/v1/products/?category=${params.id}`
+  );
+  const data = await res.json();
+
+  return {
+    props: {
+      data: data.data,
+    },
+  };
+};

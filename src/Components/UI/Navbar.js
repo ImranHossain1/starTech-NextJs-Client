@@ -26,24 +26,34 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-60"
           >
             <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
+              <ul className="p-1 z-50">
                 <li>
-                  <a>Submenu 1</a>
+                  <Link href="/categories/processor">Processor</Link>
                 </li>
                 <li>
-                  <a>Submenu 2</a>
+                  <Link href="/categories/motherboard">Motherboard</Link>
+                </li>
+                <li>
+                  <Link href="/categories/ram">RAM</Link>
+                </li>
+                <li>
+                  <Link href="/categories/powersupplyunit">
+                    Power Supply Unit
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/categories/storagedevice">Storage Device</Link>
+                </li>
+                <li>
+                  <Link href="/categories/monitor">Monitor</Link>
+                </li>
+                <li>
+                  <Link href="/categories/others">Others</Link>
                 </li>
               </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
             </li>
           </ul>
         </div>
@@ -62,7 +72,7 @@ const Navbar = () => {
           <li className="relative group">
             <details>
               <summary className="cursor-pointer">Categories</summary>
-              <ul className="absolute left-0 hidden mt-2 space-y-2 bg-white rounded-lg border border-gray-200 group-hover:block">
+              <ul className="p-1 z-50">
                 <li>
                   <Link href="/categories/processor">Processor</Link>
                 </li>
