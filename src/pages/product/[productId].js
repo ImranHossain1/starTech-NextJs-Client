@@ -1,4 +1,5 @@
 import ProductReview from "@/Components/UI/ProductReview";
+import Reviews from "@/Components/UI/Reviews";
 import RootLayout from "@/Components/layouts/RootLayout";
 import Image from "next/image";
 
@@ -73,6 +74,10 @@ const ProductDetailsPage = ({ product }) => {
         </div>
       </div>
       {<ProductReview id={data._id}></ProductReview>}
+      {data?.reviews.map((review, index) => (
+        <Reviews key={index} review={review}></Reviews>
+      ))}
+
       {/* <div className="">
         <h3 className="text-primary font-bold text-2xl mt-4">Reviews:</h3>
         <div className="">
@@ -95,8 +100,16 @@ export default ProductDetailsPage;
 ProductDetailsPage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
+export const getStaticPaths = async () => {
+  const res = await fetch("http://localhost:5000/api/v1/products/");
+  const products = await res.json();
+  const paths = products.data.map((product) => ({
+    params: { productId: product._id },
+  }));
+  return { paths, fallback: false };
+};
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
   const { params } = context;
   const res = await fetch(
     `http://localhost:5000/api/v1/products/product-details/${params.productId}`
@@ -106,5 +119,6 @@ export const getServerSideProps = async (context) => {
     props: {
       product: data,
     },
+    revalidate: 10,
   };
 };

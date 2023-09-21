@@ -51,7 +51,7 @@ const FeaturedProduct = ({ products }) => {
               </p>
               <p>
                 <span className="font-bold">Rating : </span>
-                {product?.average_rating}
+                {product?.rating.toFixed(2)}
               </p>
               <div className="card-actions justify-between flex mt-4">
                 <Link href={`/product/${product?._id}`}>

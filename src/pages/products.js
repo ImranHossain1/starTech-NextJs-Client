@@ -41,5 +41,6 @@ export const getStaticProps = async () => {
     props: {
       products: shuffledProducts,
     },
+    revalidate: 10,
   };
 };

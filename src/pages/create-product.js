@@ -20,7 +20,6 @@ const CreateProduct = () => {
     // Include the key features data in the data object
     data.key_features = keyFeatures;
     data.price = parseFloat(data.price);
-    // console.log(keyFeatures);
     try {
       // Send a POST request to your backend API to create the product
       const response = await fetch(
