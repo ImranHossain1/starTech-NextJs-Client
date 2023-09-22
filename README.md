@@ -1,4 +1,6 @@
-# Book Store ReactJS App with Redux
+# PC Builder Website with Next.js
+
+Welcome to the PC Builder website built using Next.js, a React framework known for server-side rendering (SSR), static site generation (SSG), and incremental static regeneration (ISR). This project helps users select and build their custom PCs with ease.
 
 **Live Client Site Link**: [Smart Tech Pc Builder Client](https://pc-builder-client-pied.vercel.app/)
 
@@ -7,10 +9,6 @@
 **GitHub Client Site Link**: [Smart Tech Pc Builder Client Side Code](https://github.com/ImranHossain1/starTech-NextJs-Client)
 
 **GitHub Server Site Link**: [Smart Tech Pc Builder Server Side code](https://github.com/ImranHossain1/StarTech-server)
-
-# PC Builder Website with Next.js
-
-Welcome to the PC Builder website built using Next.js, a React framework known for server-side rendering (SSR), static site generation (SSG), and incremental static regeneration (ISR). This project helps users select and build their custom PCs with ease.
 
 ## Features
 
