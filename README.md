@@ -1,38 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PC Builder Website with Next.js
 
-## Getting Started
+Welcome to the PC Builder website built using Next.js, a React framework known for server-side rendering (SSR), static site generation (SSG), and incremental static regeneration (ISR). This project helps users select and build their custom PCs with ease.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Navbar Setup
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- A clean and feature-rich Navbar with the following buttons:
+  - "All Products": Takes users to a page displaying all available products.
+  - "Create New Product": Authenticated users can use this button to create new product listings, including images hosted on imgBB.
+  - "Dynamic Login": The login button dynamically appears for unauthenticated users, allowing them to log in using NextAuth with social login providers (Google/Github).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Home Page (SSG and ISR)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- The home page is statically generated (SSG) and showcases at least 6 random Featured Products.
+- Each product displays essential details like image, product name, category, price, stock status, and rating.
+- Clicking on a product takes the user to the product detail page.
+- ISR is implemented to periodically regenerate the home page to ensure up-to-date product listings.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Featured Categories (SSR)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- The Featured Categories section on the home page is rendered on the server-side (SSR).
+- Each category is clickable and redirects the user to a separate page displaying at least 3 products from that category.
 
-## Learn More
+### Product Detail Page (SSG and ISR) with User Reviews and Ratings
 
-To learn more about Next.js, take a look at the following resources:
+- A detailed product page for each PC component displaying essential information such as image, product name, category, stock status, price, description, key features, individual rating, average rating, and reviews.
+- Authenticated users can leave reviews and ratings on the product detail page.
+- The product's overall rating is dynamically updated based on user ratings and reviews.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### PC Builder Page (SSR) with Shopping Cart
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- The PC Builder page is designed using server-side rendering (SSR).
+- It includes category sections for CPU, motherboard, RAM, PSU, storage, and monitor.
+- Each section has a "Choose/Select" button, leading to another page displaying at least 3 components of the specific category.
+- Users can select components and add them to their shopping cart.
+- The page displays the total cost of all selected products.
 
-## Deploy on Vercel
+### Add To Builder Functionality
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Implemented an "Add To Builder" button on each component card in the category pages.
+- Clicking the button redirects the user to the PC Builder page and updates the state with the selected component.
+- Redux/Context API is used to manage the central store for this feature.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Checkout Page and Order Completion
+
+- After adding products to the shopping cart, users can click on the "Checkout" button.
+- The checkout page displays the list of selected products, their quantities, and the total cost.
+- Users can complete the order from this page.
+- After completing the order, the shopping cart is emptied.
+
+### Bonus: User Authentication (NextAuth)
+
+- The PC Builder page is a protected route accessible only to logged-in users.
+- User authentication is implemented using NextAuth with at least one social login provider (Google/Github).
+
+### Bonus: Responsive Design
+
+- The entire application is designed to be responsive, ensuring a seamless experience on both mobile and desktop devices.
