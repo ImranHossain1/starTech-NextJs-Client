@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import toast from "react-hot-toast";
-
+import { useSession } from "next-auth/react";
+import profile from "../../assets/user.png";
 const ProductReviewForm = ({ id }) => {
+  const { data: session } = useSession();
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
   const [error, setError] = useState("");
@@ -23,6 +25,10 @@ const ProductReviewForm = ({ id }) => {
       setError("Both rating and comment are required.");
       return;
     }
+    if (!session?.user?.email) {
+      setError("User should logged in first");
+      return;
+    }
 
     try {
       // Create the data object to send to the API
@@ -30,6 +36,7 @@ const ProductReviewForm = ({ id }) => {
         reviews: {
           rating,
           comment,
+          userName: session?.user.name,
         },
       };
 

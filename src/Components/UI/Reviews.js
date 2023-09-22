@@ -1,12 +1,23 @@
 import React from "react";
-
+import profileImage from "../../assets/user.png";
+import Image from "next/image";
 const Reviews = ({ review }) => {
-  console.log(review);
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-      <div className="flex items-center mb-2">
-        <p className="text-xl font-semibold mr-2">Comment:</p>
-        <p className="text-gray-700">{review.comment}</p>
+    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md my-5">
+      <div className="flex items-center mb-2 mr-2">
+        <Image
+          src={profileImage} // Assuming userImage is a URL to the user's image
+          alt={"image"}
+          height={50}
+          width={50}
+        />
+        <p className="text-xl font-semibold ml-2">
+          {review.userName || "User"}
+        </p>
+      </div>
+      <div className="mb-2 flex items-center align-center">
+        <p className="text-xl font-semibold">Comment:</p>
+        <p className="text-gray-700 font-semibold ml-3">{review.comment}</p>
       </div>
       <div className="flex items-center">
         <p className="text-xl font-semibold mr-2">Rating:</p>

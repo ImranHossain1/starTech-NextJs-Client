@@ -2,12 +2,34 @@ import ProductReview from "@/Components/UI/ProductReview";
 import Reviews from "@/Components/UI/Reviews";
 import RootLayout from "@/Components/layouts/RootLayout";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const ProductDetailsPage = ({ product }) => {
-  const { data } = product;
+  const [isLoaded, setIsLoaded] = useState(false);
 
+  useEffect(() => {
+    if (product) {
+      setIsLoaded(true);
+    }
+  }, [product]);
+
+  if (!isLoaded) {
+    // Render a loading indicator while data is being fetched
+    return (
+      <div className="mt-10 w-11/12 mx-auto text-center">
+        <p className="text-2xl font-semibold">Loading...</p>
+      </div>
+    );
+  }
+  if (!product?.data) {
+    return (
+      <div className="mt-10 w-11/12 mx-auto text-center">
+        <p className="text-2xl font-semibold">Product Not found</p>
+      </div>
+    );
+  }
   const renderKeyFeatures = () => {
-    const { key_features } = data;
+    const { key_features } = product?.data;
 
     if (!key_features) {
       return null;
@@ -32,8 +54,8 @@ const ProductDetailsPage = ({ product }) => {
         <div className="lg:flex gap-8">
           <figure className="md:w-6/12">
             <Image
-              src={data?.image}
-              alt={data?.product_name} // Use a single alt attribute with the product name
+              src={product?.data?.image}
+              alt={product?.data?.product_name} // Use a single alt attribute with the product name
               className="rounded-xl" // Fix typo here
               width={400}
               height={400}
@@ -41,29 +63,30 @@ const ProductDetailsPage = ({ product }) => {
           </figure>
           <div className="card-body">
             <h1 className="card-title text-3xl text-primary font-bold">
-              {data?.product_name}
+              {product?.data?.product_name}
             </h1>
             <div className="text-xl md:flex md:flex-row md:justify-between mt-3">
               <p>
                 <span className="font-bold">Category: </span>
-                {data?.category}
+                {product?.data?.category}
               </p>
               <p>
                 <span className="font-bold">Status: </span>
-                {data?.status}
+                {product?.data?.status}
               </p>
               <p>
-                <span className="font-bold">Price: </span>${data?.price}
+                <span className="font-bold">Price: </span>$
+                {product?.data?.price}
               </p>
             </div>
             <div className="text-xl">
               <p className="text-xl my-3">
                 <span className="font-bold">Rating: </span>
-                {data?.rating.toFixed(2)}
+                {product?.data?.rating}
               </p>
               <p className="text-xl">
                 <span className="font-bold">Description: </span>
-                {data?.description}
+                {product?.data?.description}
               </p>
             </div>
             <div className="text-xl">
@@ -73,24 +96,10 @@ const ProductDetailsPage = ({ product }) => {
           </div>
         </div>
       </div>
-      {<ProductReview id={data._id}></ProductReview>}
-      {data?.reviews.map((review, index) => (
+      {<ProductReview id={product?.data._id}></ProductReview>}
+      {product?.data?.reviews.map((review, index) => (
         <Reviews key={index} review={review}></Reviews>
       ))}
-
-      {/* <div className="">
-        <h3 className="text-primary font-bold text-2xl mt-4">Reviews:</h3>
-        <div className="">
-          {product?.reviews?.map((review, index) => (
-            <div key={index} className="card shadow-xl rounded-md p-4">
-              <p className="text-xl my-1">User: {review.user}</p>
-              <p className="my-1">Rating: {review.rating}</p>
-              <p className="my-1">Comment: {review.comment}</p>
-              <p className="my-1">Date: {review.date}</p>
-            </div>
-          ))}
-        </div>
-      </div> */}
     </div>
   );
 };
@@ -106,7 +115,7 @@ export const getStaticPaths = async () => {
   const paths = products.data.map((product) => ({
     params: { productId: product._id },
   }));
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 };
 
 export const getStaticProps = async (context) => {
