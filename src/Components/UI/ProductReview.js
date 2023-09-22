@@ -42,7 +42,7 @@ const ProductReviewForm = ({ id }) => {
 
       // Make a POST request to the API using the fetch method
       await fetch(
-        `http://localhost:5000/api/v1/products/update_product/${id}`,
+        `https://next-gen-pc-builder-server.vercel.app/api/v1/products/update_product/${id}`,
         {
           method: "PATCH",
           headers: {

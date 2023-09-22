@@ -30,7 +30,9 @@ Home.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/products/");
+  const res = await fetch(
+    "https://next-gen-pc-builder-server.vercel.app/api/v1/products/?limit=50&page=1"
+  );
   const data = await res.json();
 
   const shuffledProducts = data?.data.sort(() => Math.random() - 0.5);

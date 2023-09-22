@@ -37,13 +37,16 @@ const CreateProduct = () => {
           data.image = img;
           console.log(data.image);
           //send data to db
-          fetch("http://localhost:5000/api/v1/products/create-product", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(data),
-          })
+          fetch(
+            "https://next-gen-pc-builder-server.vercel.app/api/v1/products/create-product",
+            {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(data),
+            }
+          )
             .then((res) => res.json())
             .then((res) => {
               if (res.success) {
